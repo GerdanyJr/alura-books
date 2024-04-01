@@ -1,0 +1,118 @@
+.cabecalho_menu-hamburguer {
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/images/Menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+.container_botao:checked ~ .container_rotulo > .cabecalho_menu-hamburguer {
+  background-image: url("/assets/images/Menu Aberto.svg");
+}
+.container_botao:checked ~ .container_rotulo {
+  background: var(--blue-gradient);
+}
+.cabecalho {
+  background-color: var(--primary-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.container {
+  display: flex;
+  align-items: center;
+}
+.container_imagem {
+  padding: 1em;
+}
+.lista-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 60vw;
+}
+.container_botao:checked ~ .lista-menu {
+  display: block;
+}
+.lista-menu_titulo,
+.lista-menu_item {
+  padding: 1em;
+  background-color: var(--primary-white);
+}
+.lista-menu_titulo {
+  color: var(--primary-orange);
+  font-weight: 700;
+}
+
+.lista-menu-link {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: var(--blue-gradient);
+  background-clip: text;
+  text-transform: uppercase;
+}
+.container_botao {
+  display: none;
+}
+.container_titulo {
+  display: none;
+}
+.opcoes {
+  display: none;
+}
+.container_texto {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .container_titulo {
+    display: block;
+    font-family: var(--josefin-sans);
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .container_titulo > span {
+    font-weight: 700;
+  }
+  .opcoes {
+    display: flex;
+  }
+  .opcoes_item {
+    padding: 0 1em;
+    text-transform: uppercase;
+  }
+  .opcoes_link {
+    text-decoration: none;
+    color: var(--primary-black);
+  }
+  .meus_favoritos {
+    display: none;
+  }
+  .cabecalho_menu-hamburguer {
+    display: none;
+  }
+  .opcoes_botao:checked ~ .lista-menu {
+    display: block;
+    width: auto;
+  }
+  .opcoes_botao {
+    display: none;
+  }
+}
+@media screen and (min-width: 1728px) {
+  .container_link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-black);
+  }
+  .cabecalho {
+    padding: 0 2em;
+  }
+  .opcoes {
+    margin-right: auto;
+  }
+  .container_texto {
+    display: block;
+  }
+}
